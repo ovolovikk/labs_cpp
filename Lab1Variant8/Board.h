@@ -1,31 +1,35 @@
-#pragma once
+// TODO(@ovolovikk): use portable include guard
+#ifndef BOARD_H
+#define BOARD_H
 
-#include <vector>
+// TODO(@ovolovikk): sort your includes
 #include <set>
 #include <utility>
+#include <vector>
 
-class Board
-{
-private:
-    int size;
-    std::set<std::pair<int, int>> selected_cells;
+class Board {
+ private:
+  int size;
+  std::set<std::pair<int, int>> selected_cells;
 
-    bool isAdjacentToSelected(int row, int col) const;
+  bool isAdjacentToSelected(int row, int col) const;
 
-    bool isInBounds(int row, int col) const;
-    
-public:
-    explicit Board(int n);
+  bool isInBounds(int row, int col) const;
 
-    void addSelectedCell(int row, int col);
+ public:
+  explicit Board(int n);
 
-    void reset();
+  void addSelectedCell(int row, int col);
 
-    int calculateFreeZoneSize() const;
+  void reset();
 
-    int getTotalCells() const { return size * size; }
+  int calculateFreeZoneSize() const;
 
-    int getSize() const { return size; }
+  int getTotalCells() const { return size * size; }
 
-    size_t getSelectedCount() const { return selected_cells.size(); }
+  int getSize() const { return size; }
+
+  size_t getSelectedCount() const { return selected_cells.size(); }
 };
+
+#endif  // BOARD_H
