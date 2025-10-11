@@ -1,8 +1,6 @@
-// TODO(@ovolovikk): use portable include guard
 #ifndef BOARD_H
 #define BOARD_H
 
-// TODO(@ovolovikk): sort your includes
 #include <set>
 #include <utility>
 #include <vector>

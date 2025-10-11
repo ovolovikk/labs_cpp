@@ -1,6 +1,5 @@
 #include "Statistics.h"
 
-// TODO(@k1rillshevchenko): sort your includes
 #include <algorithm>
 #include <numeric>
 #include <stdexcept>
