@@ -1,51 +1,66 @@
----   No Optimization  ---
+
 --- Data size: 100000000 ---
 
+Standard library algorithms:
+std::any_of (sequential): 193 ms
+std::any_of (seq policy): 192 ms
+std::any_of (par policy): 44 ms
+
 Custom parallel algorithm:
-K = 1, Time = 29 ms
-K = 2, Time = 16 ms
-K = 3, Time = 15 ms
-K = 4, Time = 14 ms
-K = 5, Time = 14 ms
-K = 6, Time = 14 ms
-K = 7, Time = 16 ms
-K = 8, Time = 15 ms
-K = 10, Time = 14 ms
-K = 12, Time = 13 ms
+K = 1, Time = 194 ms
+K = 2, Time = 96 ms
+K = 3, Time = 69 ms
+K = 4, Time = 49 ms
+K = 5, Time = 43 ms
+K = 6, Time = 49 ms
+K = 7, Time = 57 ms
+K = 8, Time = 51 ms
+K = 10, Time = 45 ms
+K = 12, Time = 41 ms
 
 Best K: 12
 Hardware threads: 6
 
 --- Data size: 300000000 ---
 
-Custom parallel algorithm:
-K = 1, Time = 91 ms
-K = 2, Time = 51 ms
-K = 3, Time = 45 ms
-K = 4, Time = 45 ms
-K = 5, Time = 42 ms
-K = 6, Time = 42 ms
-K = 7, Time = 48 ms
-K = 8, Time = 44 ms
-K = 10, Time = 42 ms
-K = 12, Time = 42 ms
+Standard library algorithms:
+std::any_of (sequential): 624 ms
+std::any_of (seq policy): 631 ms
+std::any_of (par policy): 130 ms
 
-Best K: 5
+Custom parallel algorithm:
+K = 1, Time = 585 ms
+K = 2, Time = 291 ms
+K = 3, Time = 192 ms
+K = 4, Time = 146 ms
+K = 5, Time = 121 ms
+K = 6, Time = 108 ms
+K = 7, Time = 122 ms
+K = 8, Time = 122 ms
+K = 10, Time = 121 ms
+K = 12, Time = 107 ms
+
+Best K: 12
 Hardware threads: 6
 
 --- Data size: 500000000 ---
 
+Standard library algorithms:
+std::any_of (sequential): 967 ms
+std::any_of (seq policy): 983 ms
+std::any_of (par policy): 277 ms
+
 Custom parallel algorithm:
-K = 1, Time = 148 ms
-K = 2, Time = 82 ms
-K = 3, Time = 75 ms
-K = 4, Time = 71 ms
-K = 5, Time = 73 ms
-K = 6, Time = 74 ms
-K = 7, Time = 71 ms
-K = 8, Time = 71 ms
-K = 10, Time = 71 ms
-K = 12, Time = 70 ms
+K = 1, Time = 1060 ms
+K = 2, Time = 490 ms
+K = 3, Time = 319 ms
+K = 4, Time = 320 ms
+K = 5, Time = 416 ms
+K = 6, Time = 458 ms
+K = 7, Time = 259 ms
+K = 8, Time = 313 ms
+K = 10, Time = 271 ms
+K = 12, Time = 206 ms
 
 Best K: 12
 Hardware threads: 6

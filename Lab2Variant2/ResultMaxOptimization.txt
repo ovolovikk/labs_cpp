@@ -1,51 +1,66 @@
----   Max Optimization  ---
+
 --- Data size: 100000000 ---
 
+Standard library algorithms:
+std::any_of (sequential): 53 ms
+std::any_of (seq policy): 39 ms
+std::any_of (par policy): 14 ms
+
 Custom parallel algorithm:
-K = 1, Time = 29 ms
+K = 1, Time = 30 ms
 K = 2, Time = 17 ms
-K = 3, Time = 16 ms
+K = 3, Time = 15 ms
 K = 4, Time = 14 ms
-K = 5, Time = 14 ms
-K = 6, Time = 13 ms
+K = 5, Time = 16 ms
+K = 6, Time = 15 ms
 K = 7, Time = 16 ms
-K = 8, Time = 14 ms
+K = 8, Time = 15 ms
 K = 10, Time = 14 ms
 K = 12, Time = 14 ms
 
-Best K: 6
+Best K: 4
 Hardware threads: 6
 
 --- Data size: 300000000 ---
 
-Custom parallel algorithm:
-K = 1, Time = 89 ms
-K = 2, Time = 52 ms
-K = 3, Time = 47 ms
-K = 4, Time = 45 ms
-K = 5, Time = 42 ms
-K = 6, Time = 42 ms
-K = 7, Time = 50 ms
-K = 8, Time = 47 ms
-K = 10, Time = 41 ms
-K = 12, Time = 41 ms
+Standard library algorithms:
+std::any_of (sequential): 172 ms
+std::any_of (seq policy): 123 ms
+std::any_of (par policy): 45 ms
 
-Best K: 10
+Custom parallel algorithm:
+K = 1, Time = 99 ms
+K = 2, Time = 57 ms
+K = 3, Time = 53 ms
+K = 4, Time = 50 ms
+K = 5, Time = 49 ms
+K = 6, Time = 47 ms
+K = 7, Time = 52 ms
+K = 8, Time = 49 ms
+K = 10, Time = 47 ms
+K = 12, Time = 44 ms
+
+Best K: 12
 Hardware threads: 6
 
 --- Data size: 500000000 ---
 
+Standard library algorithms:
+std::any_of (sequential): 266 ms
+std::any_of (seq policy): 193 ms
+std::any_of (par policy): 68 ms
+
 Custom parallel algorithm:
-K = 1, Time = 150 ms
+K = 1, Time = 152 ms
 K = 2, Time = 83 ms
-K = 3, Time = 74 ms
-K = 4, Time = 70 ms
-K = 5, Time = 70 ms
-K = 6, Time = 68 ms
-K = 7, Time = 71 ms
-K = 8, Time = 69 ms
-K = 10, Time = 68 ms
-K = 12, Time = 67 ms
+K = 3, Time = 87 ms
+K = 4, Time = 108 ms
+K = 5, Time = 88 ms
+K = 6, Time = 93 ms
+K = 7, Time = 84 ms
+K = 8, Time = 82 ms
+K = 10, Time = 87 ms
+K = 12, Time = 74 ms
 
 Best K: 12
 Hardware threads: 6

@@ -30,10 +30,17 @@ void run_experiments(const std::vector<int>& data, std::ofstream& report_file) {
     const int target_value = -1;
     auto predicate = [target_value](int val) { return val == target_value; };
 
+    volatile bool result;
+
     // lib algorithms
-    { Timer t("std::any_of (sequential)"); std::any_of(data.cbegin(), data.cend(), predicate); }
-    { Timer t("std::any_of (seq policy)"); std::any_of(std::execution::seq, data.cbegin(), data.cend(), predicate); }
-    { Timer t("std::any_of (par policy)"); std::any_of(std::execution::par, data.cbegin(), data.cend(), predicate); }
+    std::cout << "\nStandard library algorithms:\n";
+    report_file << "\nStandard library algorithms:\n";
+
+    { Timer t("std::any_of (sequential)", report_file); result = std::any_of(data.cbegin(), data.cend(), predicate); }
+    { Timer t("std::any_of (seq policy)", report_file); result = std::any_of(std::execution::seq, data.cbegin(), data.cend(), predicate); }
+    { Timer t("std::any_of (par policy)", report_file); result = std::any_of(std::execution::par, data.cbegin(), data.cend(), predicate); }
+
+    (void)result;
 
     // parallel algorithms
     std::cout << "\nCustom parallel algorithm:\n";
@@ -53,7 +60,7 @@ void run_experiments(const std::vector<int>& data, std::ofstream& report_file) {
         std::cout << "K = " << k << ", Time = " << duration << " ms\n";
         report_file << "K = " << k << ", Time = " << duration << " ms\n";
 
-        if (duration < best_time) |
+        if (duration < best_time)
         {
             best_time = duration;
             best_k = k;
